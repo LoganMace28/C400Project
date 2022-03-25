@@ -90,12 +90,37 @@
           <option value="">Select</option>
        </select>
        </div>
-
+       <p>Options</p>
+  <div class = "Checkbox">
+  <input type="Checkbox" id="heatseat" name="heatseat" value="Heated Seats">
+  <label for="heatseat">Heated Seats</label><br>
+  <input type="Checkbox" id="Remo" name="Remo" value="Remote Start">
+  <label for="Remo">Remote Start</label><br>  
+  <input type="Checkbox" id="Auto" name="Auto" value="Automatic Headlights">
+  <label for="Auto">Automatic HeadLights</label><br>
+  <input type="Checkbox" id="Cruse" name="Cruse" value="Cruse Control">
+  <label for="Cruse">Cruse control</label><br>
+  <input type="Checkbox" id="Bluetooth" name="Bluetooth" value="Bluetooth">
+  <label for="Bluetooth">Bluetooth</label><br><br>
+  <input type="submit" value="Submit">
+  </div>
+  <p>Mileage</p>
+  <div class = "radio">
+  <input type="radio" id="low" name="Mileage" value="low">
+  <label for="heatseat">0-10k</label><br>
+  <input type="radio" id="Mid" name="Mileage" value="Mid">
+  <label for="Remo">11-40k</label><br>  
+  <input type="radio" id="High" name="Mileage" value="High">
+  <label for="Auto">41-70k</label><br>
+  <input type="radio" id="Vhigh" name="Mileage" value="vHigh">
+  <label for="Cruse">71-100k</label><br>
+  <input type="radio" id="Shigh" name="Mileage" value="Shigh">
+  <label for="Bluetooth">101k and up</label><br><br>
+  <input type="submit" value="Submit">
+  </div>
     </form>
 
 </body>
-
-
 <script type="text/javascript">
   $(document).ready(function(){
     $('#year').on('change', function(e){
