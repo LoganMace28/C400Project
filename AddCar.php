@@ -102,7 +102,6 @@
   <label for="Cruse">Cruse control</label><br>
   <input type="Checkbox" id="Bluetooth" name="Bluetooth" value="Bluetooth">
   <label for="Bluetooth">Bluetooth</label><br><br>
-  <input type="submit" value="Submit">
   </div>
   <p>Mileage</p>
   <div class = "radio">
