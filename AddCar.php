@@ -2,8 +2,13 @@
 
 <html>
    <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="CSS/common.css" />
+    <link rel="stylesheet" href="https://unpkg.com/rivet-core@2.0.0-beta.2/css/rivet.min.css">
+    <title>Home</title>
+
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
    <script>
     var _data = {};
             var _data = {"2022":{"chev":"Chevrolet","dod":"Dodge","for":"Ford","hon":"Honda","tes":"Tesla"},
@@ -12,43 +17,85 @@
                         "2019":{"chev":"Chevrolet","dod":"Dodge","for":"Ford","hon":"Honda","tes":"Tesla"},
                         "2018":{"chev":"Chevrolet","dod":"Dodge","for":"Ford","hon":"Honda","tes":"Tesla"}};
     var _model = {};
-            var _model = {"chev":{"equ":"Equinox"},
-                            "dod":{"dur":"Durango"},
-                            "for":{"esc":"Escape"},
-                            "hon":{"crv":"CRV"},
-                            "tes":{"mox":"Model X"}};
+            var _model = {"chev":{"equ":"Equinox","Cru":"Cruze"},
+                            "dod":{"dur":"Durango", "Dar":"Dart"},
+                            "for":{"esc":"Escape","Foc":"Focus"},
+                            "hon":{"crv":"CRV","Civ":"Civic"},
+                            "tes":{"mox":"Model X","Mo3":"Model 3"}};
    </script>
-      <meta charset = "utf-8" />
-      <title>RedBook Value</title>
-	  <link rel="stylesheet" type="text/css" href="common.css" />
+
    </head>
 
+
    <body>
+    <!-- Header and Page Banner - Jean -->
+    <header class="rvt-header-wrapper">
+        <div class="rvt-header-global">
+          <div class="rvt-container-xl">
+            <div class="rvt-header-global__inner">
+              <a class="rvt-lockup" href="AddCar.php">
+          
+                  <div class="rvt-lockup__body">
+                    <span class="rvt-lockup__title">Red Book Value</span>
+                    <span class="rvt-lockup__subtitle">Blue Team Inc.</span>
+                  </div>
+                </a>
 
-	  <h3><?php    ?></h3>
-	  
-      <form method = "post" action = "AddCar.php">
-         <h2>Get Red book Value</h2>
+              </div>
+              <a href="#0" class="rvt-header-id__log-out">
+                Log out
+                </a>
+            </div>
+            
+          </div>
+          
+        </div>
+        
+      </header>
 
-         <h2>Input a car you own</h2>
-         <p>Select the Year, Make, and Model of your car</p>
-         <select class = "form-control" id = "year" name = "Year" >
-            <option value="">Select</option>
-			<option value="2018">2018</option>
-            <option value="2019">2019</option>
-            <option value="2020">2020</option>
-            <option value="2021">2021</option>
-            <option value="2022">2022</option>
-         </select>
-         <select class = "form-control" id = "make" name = "Make" >
-            <option value="">Select</option>
-         </select>
-         <select class = "form-control" id = "model" name = "Model" >
-            <option value="">Select</option>
-         </select>
+      <div class="rvt-hero">
+        <div class="rvt-container-lg">
+            <div class="rvt-hero__inner">
+                <div class="rvt-hero__body [ rvt-flow ]">
+                    <h1 class="rvt-hero__title">Welcome to Red Book Value!</h1>
+                    <div class="rvt-hero__teaser">
+                        <p>Find the true value of your vehicle. Tell us which car you own below!</p>
+                    </div>
+                
+                </div>
+                <div class="rvt-hero__image">
+                    <img src="Image/carsimage.jpeg" alt="Car Background Image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h3><?php    ?></h3>
 	  
-   </body>
-</html>
+    <form method = "post" action = "AddCar.php">
+       <div class = "rvt-container-lg">
+       <h2 class = "select-title">Select the Year, Make, and Model of your car</h2>
+       <select class = "dropdown form-control" id = "year" name = "Year" >
+          <option value="">Select</option>
+          <option value="2018">2018</option>
+          <option value="2019">2019</option>
+          <option value="2020">2020</option>
+          <option value="2021">2021</option>
+          <option value="2022">2022</option>
+       </select>
+       <select class = "dropdown form-control" id = "make" name = "Make" >
+          <option value="">Select</option>
+       </select>
+       <select class = "dropdown form-control" id = "model" name = "Model" >
+          <option value="">Select</option>
+       </select>
+       </div>
+
+    </form>
+
+</body>
+
+
 <script type="text/javascript">
   $(document).ready(function(){
     $('#year').on('change', function(e){
@@ -85,3 +132,5 @@
     });
   });
 </script>
+
+</html>
