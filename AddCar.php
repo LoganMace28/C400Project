@@ -11,17 +11,15 @@
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
    <script>
     var _data = {};
-            var _data = {"2022":{"chev":"Chevrolet","dod":"Dodge","for":"Ford","hon":"Honda","tes":"Tesla"},
-                        "2021":{"chev":"Chevrolet","dod":"Dodge","for":"Ford","hon":"Honda","tes":"Tesla"},
-                        "2020":{"chev":"Chevrolet","dod":"Dodge","for":"Ford","hon":"Honda","tes":"Tesla"},
-                        "2019":{"chev":"Chevrolet","dod":"Dodge","for":"Ford","hon":"Honda","tes":"Tesla"},
-                        "2018":{"chev":"Chevrolet","dod":"Dodge","for":"Ford","hon":"Honda","tes":"Tesla"}};
+            var _data = {"2022":{"Chevrolet":"Chevrolet","Dodge":"Dodge","Ford":"Ford","Honda":"Honda","Tesla":"Tesla"},
+                        "2021":{"Chevrolet":"Chevrolet","Dodge":"Dodge","Ford":"Ford","Honda":"Honda","Tesla":"Tesla"},
+};
     var _model = {};
-            var _model = {"chev":{"equ":"Equinox","Cru":"Cruze"},
-                            "dod":{"dur":"Durango", "Dar":"Dart"},
-                            "for":{"esc":"Escape","Foc":"Focus"},
-                            "hon":{"crv":"CRV","Civ":"Civic"},
-                            "tes":{"mox":"Model X","Mo3":"Model 3"}};
+            var _model = {"chev":{"Equinox":"Equinox","Cruze":"Cruze"},
+                            "dod":{"Durango":"Durango", "Dart":"Dart"},
+                            "for":{"Escape":"Escape","Focus":"Focus"},
+                            "hon":{"CRV":"CRV","Civic":"Civic"},
+                            "tes":{"Model X":"Model X","Model 3":"Model 3"}};
    </script>
 
    </head>
@@ -69,56 +67,26 @@
             </div>
         </div>
     </div>
+	  <?php 
 
-    <h3><?php    ?></h3>
-	  
-    <form method = "post" action = "AddCar.php">
+    ?>
+    <form method = "post" action ="CarDetails.php">
        <div class = "rvt-container-lg">
        <h2 class = "select-title">Select the Year, Make, and Model of your car</h2>
-       <select class = "dropdown form-control" id = "year" name = "Year" >
+       <select class = "dropdown form-control" id = "year" name = "year" >
           <option value="">Select</option>
-          <option value="2018">2018</option>
-          <option value="2019">2019</option>
-          <option value="2020">2020</option>
           <option value="2021">2021</option>
           <option value="2022">2022</option>
        </select>
-       <select class = "dropdown form-control" id = "make" name = "Make" >
+       <select class = "dropdown form-control" id = "make" name = "make" >
           <option value="">Select</option>
        </select>
-       <select class = "dropdown form-control" id = "model" name = "Model" >
-          <option value="">Select</option>
+       <select class = "dropdown form-control" id = "model" name = "model" onchange="this.form.Submit.disabled=this.options[this.selectedIndex].value==''">
+       <option value="">Select</option>
+       <input name="Submit" type="Submit" value="Submit" disabled="disabled">
        </select>
        </div>
-       <p>Options</p>
-  <div class = "Checkbox">
-  <input type="Checkbox" id="heatseat" name="heatseat" value="Heated Seats">
-  <label for="heatseat">Heated Seats</label><br>
-  <input type="Checkbox" id="Remo" name="Remo" value="Remote Start">
-  <label for="Remo">Remote Start</label><br>  
-  <input type="Checkbox" id="Auto" name="Auto" value="Automatic Headlights">
-  <label for="Auto">Automatic HeadLights</label><br>
-  <input type="Checkbox" id="Cruse" name="Cruse" value="Cruse Control">
-  <label for="Cruse">Cruse control</label><br>
-  <input type="Checkbox" id="Bluetooth" name="Bluetooth" value="Bluetooth">
-  <label for="Bluetooth">Bluetooth</label><br><br>
-  </div>
-  <p>Mileage</p>
-  <div class = "radio">
-  <input type="radio" id="low" name="Mileage" value="low">
-  <label for="heatseat">0-10k</label><br>
-  <input type="radio" id="Mid" name="Mileage" value="Mid">
-  <label for="Remo">11-40k</label><br>  
-  <input type="radio" id="High" name="Mileage" value="High">
-  <label for="Auto">41-70k</label><br>
-  <input type="radio" id="Vhigh" name="Mileage" value="vHigh">
-  <label for="Cruse">71-100k</label><br>
-  <input type="radio" id="Shigh" name="Mileage" value="Shigh">
-  <label for="Bluetooth">101k and up</label><br><br>
-  <input type="submit" value="Submit">
-  </div>
     </form>
-
 </body>
 <script type="text/javascript">
   $(document).ready(function(){
