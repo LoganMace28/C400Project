@@ -15,11 +15,11 @@
                         "2021":{"Chevrolet":"Chevrolet","Dodge":"Dodge","Ford":"Ford","Honda":"Honda","Tesla":"Tesla"},
 };
     var _model = {};
-            var _model = {"chev":{"Equinox":"Equinox","Cruze":"Cruze"},
-                            "dod":{"Durango":"Durango", "Dart":"Dart"},
-                            "for":{"Escape":"Escape","Focus":"Focus"},
-                            "hon":{"CRV":"CRV","Civic":"Civic"},
-                            "tes":{"Model X":"Model X","Model 3":"Model 3"}};
+            var _model = {"Chevrolet":{"Equinox":"Equinox","Cruze":"Cruze"},
+                            "Dodge":{"Durango":"Durango", "Dart":"Dart"},
+                            "Ford":{"Escape":"Escape","Focus":"Focus"},
+                            "Honda":{"CRV":"CRV","Civic":"Civic"},
+                            "Tesla":{"Model X":"Model X","Model 3":"Model 3"}};
    </script>
 
    </head>
@@ -68,7 +68,11 @@
         </div>
     </div>
 	  <?php 
-
+	if (isset($_POST['Submit'])) {
+    $year = $_POST['year'];
+    $make = $_POST['make'];
+    $model = $_POST['model'];
+	}
     ?>
     <form method = "post" action ="CarDetails.php">
        <div class = "rvt-container-lg">

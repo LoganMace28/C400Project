@@ -1,29 +1,12 @@
-<!DOCTYPE html>
-
-<!--
-Parking Garage
--->
-
-<html>
-   <head>
-      <meta charset = "utf-8" />
-	  <title>Login</title>
-  </head>
-
-<body>
-	<form action="login.php" method="post">
-    <h3>Login</h3>
-    <table>
-    	<tr>
-        	<td>Username:</td>
-            <td><input type="text" name= "username" id="username" size= 10 /></td>
-        </tr>
-        <tr>
-          	<td>Password:</td>
-              <td><input type="text" name= "password" id="password" size= 10 /></td>
-          </tr>
-        <tr>
-        	<td><input name="Login" type="submit" value="Login" /></td>
-        </tr>
-</body>
-</html>
+<?php 
+  
+  $dsn = 'mysql:dbname=lomace;host=localhost';
+  //DSN: The Data Source Name - it contains the information required to connect to the database.
+  //dbname: use your database name on AMPPS/MAMPS or your user-name on Turing
+  //host: use localhost on both AMPPS/MAMPS and Turing. 
+  $dbUser = 'lomace'; //use root on AMPPS/MAMPS or your user-name on Turing
+  $dbPassword = 'lomace';
+  //For password, use empty string on AMPPS/MAMPS or your password if you have one. 
+  //Default AMPPS/MAMPS password is mysql
+  
+?>
