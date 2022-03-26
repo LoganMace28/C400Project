@@ -3,6 +3,13 @@
 <html>
    <head>
     <meta charset="utf-8">
+    <style type = "text/css">
+		 .error {
+			color: #ff0000;
+			font-weight: bold;
+			border: 0px none;
+		}
+      </style>
     <link rel="stylesheet" type="text/css" href="CSS/common.css" />
     <link rel="stylesheet" href="https://unpkg.com/rivet-core@2.0.0-beta.2/css/rivet.min.css">
     <title>Car Details</title>
@@ -47,7 +54,39 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>   
+    <?php
+   
+   require_once 'login.php';
+   
+   $displayForm = true;
+   $inputError = false;
+   
+     //Connect to MySQL Server: create a new object named $pdo
+   try {
+     $pdo = new PDO($dsn, $dbUser, $dbPassword);
+   }
+   catch (PDOException $e){
+     die("Could not connect to the database server!" . "</body></html>" );
+     //throw new PDOException($e->getMessage(), (int)$e->getCode());
+   }
+
+   $year_error="";
+   $make_error="";
+   $model_error="";
+   $mileage = ""; $mileage_error="";
+   $condition = ""; $condition_error="";
+    //===========================================================================
+  
+	if (isset($_POST['enter'])) {
+		if(!@include("addop.php")) 
+			die ("Couldn't open a required file, 'addop.php'");
+		else
+			require_once 'addop.php';
+	}
+	//===========================================================================
+
+	?>
 
     <form method = "post" action = "CarDetails.php">
        <p>Options</p>
@@ -63,7 +102,7 @@
   <input type="Checkbox" id="Bluetooth" name="check[]" value="Bluetooth">
   <label for="Bluetooth">Bluetooth</label><br><br>
   </div>
-  <p>Mileage</p>
+  <p>Mileage&nbsp;<input type="text" id="mileage_error" disabled ="True" class ="error" size = "40" value="<?php echo $mileage_error; ?>"></p>
   <div class = "radio">
   <input type="radio" id="low" name="Mileage" value="1">
   <label for="heatseat">0-10k</label><br>
@@ -76,7 +115,7 @@
   <input type="radio" id="Shigh" name="Mileage" value="5">
   <label for="Bluetooth">101k and up</label><br><br>
   </div>
-  <p>Condition</p>
+  <p>Condition&nbsp;<input type="text" id="condition_error" disabled = "True" class ="error" size = "40" value="<?php echo $condition_error; ?>"></p>
   <div class = "radio">
   <input type="radio" id="Fair" name="Condition" value="4">
   <label for="heatseat">Fair</label><br>
@@ -86,9 +125,11 @@
   <label for="Auto">Very Good</label><br>
   <input type="radio" id="Exce" name="Condition" value="1">
   <label for="Cruse">Excellent</label><br>
-  <input type="submit" value="Submit">
+  <input type="submit" name = "enter" value="Submit">
   </div>
     </form>
-
+    <?php
+	
+	?>
 </body>
 </html>
