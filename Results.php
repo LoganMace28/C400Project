@@ -70,67 +70,10 @@ session_start();
             </div>
         </div>
     </div>
-	  <?php 
-	if (isset($_POST['Submit'])) {
-    $_SESSION["year"] = $_POST['year'];
-    $_SESSION["make"] = $_POST['make'];
-    $_SESSION["model"] = $_POST['model'];
-    header("Location:CarDetails.php");
-	}
+    <?php
+    
+    
+    
+    
+    
     ?>
-    <form method = "post" action ="AddCar.php">
-       <div class = "rvt-container-lg">
-       <h2 class = "select-title">Select the Year, Make, and Model of your car</h2>
-       <select class = "dropdown form-control" id = "year" name = "year" >
-          <option value="">Select</option>
-          <option value="2021">2021</option>
-          <option value="2022">2022</option>
-       </select>
-       <select class = "dropdown form-control" id = "make" name = "make" >
-          <option value="">Select</option>
-       </select>
-       <select class = "dropdown form-control" id = "model" name = "model" onchange="this.form.Submit.disabled=this.options[this.selectedIndex].value==''">
-       <option value="">Select</option>
-       <input name="Submit" type="Submit" value="Submit" disabled="disabled">
-       </select>
-       </div>
-    </form>
-</body>
-<script type="text/javascript">
-  $(document).ready(function(){
-    $('#year').on('change', function(e){
-        var source = $(this),
-            val = $.trim(source.val()),
-            target = $('#make');
-			$(target).empty();
-        if(typeof(_data[val]) != "undefined"){
-            var options = (typeof(_data[val]) != "undefined") ? _data[val] : {};
-			 $('<option>Select</option>').appendTo(target);
-            $.each( options , function(value, index) {
-                    $('<option value="' + value + '">' + index + '</option>').appendTo(target);
-            });
-        }
-
-    });
-  });
-</script>
-<script type="text/javascript">
-  $(document).ready(function(){
-    $('#make').on('change', function(e){
-        var source = $(this),
-            val = $.trim(source.val()),
-            target = $('#model');
-			$(target).empty();
-        if(typeof(_model[val]) != "undefined"){
-            var options = (typeof(_model[val]) != "undefined") ? _model[val] : {};
-			 $('<option>Select</option>').appendTo(target);
-            $.each( options , function(value, index) {
-                    $('<option value="' + value + '">' + index + '</option>').appendTo(target);
-            });
-        }
-
-    });
-  });
-</script>
-
-</html>
