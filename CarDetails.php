@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 
 <html>
@@ -70,22 +73,19 @@
      die("Could not connect to the database server!" . "</body></html>" );
      //throw new PDOException($e->getMessage(), (int)$e->getCode());
    }
-
    $year_error="";
    $make_error="";
    $model_error="";
    $mileage = ""; $mileage_error="";
    $condition = ""; $condition_error="";
     //===========================================================================
-  
-	if (isset($_POST['enter'])) {
-		if(!@include("addop.php")) 
-			die ("Couldn't open a required file, 'addop.php'");
-		else
-			require_once 'addop.php';
-	}
+if (isset($_POST['enter'])) {
+  $_SESSION["mileage"] = $_POST['Mileage'];
+  $_SESSION["condition"] = $_POST['Condition'];
+  require_once 'addop.php';
+}
 	//===========================================================================
-
+	if ($displayForm) {
 	?>
 
     <form method = "post" action = "CarDetails.php">
@@ -105,31 +105,31 @@
   <p>Mileage&nbsp;<input type="text" id="mileage_error" disabled ="True" class ="error" size = "40" value="<?php echo $mileage_error; ?>"></p>
   <div class = "radio">
   <input type="radio" id="low" name="Mileage" value="1">
-  <label for="heatseat">0-10k</label><br>
+  <label for="low">0-10k</label><br>
   <input type="radio" id="Mid" name="Mileage" value="2">
-  <label for="Remo">11-40k</label><br>  
+  <label for="Mid">11-40k</label><br>  
   <input type="radio" id="High" name="Mileage" value="3">
-  <label for="Auto">41-70k</label><br>
+  <label for="High">41-70k</label><br>
   <input type="radio" id="Vhigh" name="Mileage" value="4">
-  <label for="Cruse">71-100k</label><br>
+  <label for="Vhigh">71-100k</label><br>
   <input type="radio" id="Shigh" name="Mileage" value="5">
-  <label for="Bluetooth">101k and up</label><br><br>
+  <label for="Shigh">101k and up</label><br><br>
   </div>
   <p>Condition&nbsp;<input type="text" id="condition_error" disabled = "True" class ="error" size = "40" value="<?php echo $condition_error; ?>"></p>
   <div class = "radio">
-  <input type="radio" id="Fair" name="Condition" value="4">
-  <label for="heatseat">Fair</label><br>
-  <input type="radio" id="Good" name="Condition" value="3">
-  <label for="Remo">Good</label><br>  
-  <input type="radio" id="VeryG" name="Condition" value="2">
-  <label for="Auto">Very Good</label><br>
-  <input type="radio" id="Exce" name="Condition" value="1">
-  <label for="Cruse">Excellent</label><br>
+  <input type="radio" id="Fair" name="Condition" value="1">
+  <label for="Fair">Fair</label><br>
+  <input type="radio" id="Good" name="Condition" value="2">
+  <label for="Good">Good</label><br>  
+  <input type="radio" id="VeryG" name="Condition" value="3">
+  <label for="VeryG">Very Good</label><br>
+  <input type="radio" id="Exce" name="Condition" value="4">
+  <label for="Exce">Excellent</label><br>
   <input type="submit" name = "enter" value="Submit">
   </div>
     </form>
     <?php
-	
+  }
 	?>
 </body>
 </html>
