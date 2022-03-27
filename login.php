@@ -1,9 +1,5 @@
 <!DOCTYPE html>
 
-<!--
-Parking Garage
--->
-
 <html>
    <head>
       <meta charset = "utf-8" />
