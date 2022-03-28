@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 
 <html>
@@ -69,17 +68,3 @@
     ?>
 </body>
 </html>
-=======
-<?php 
-  
-  $dsn = 'mysql:dbname=lomace;host=localhost';
-  //DSN: The Data Source Name - it contains the information required to connect to the database.
-  //dbname: use your database name on AMPPS/MAMPS or your user-name on Turing
-  //host: use localhost on both AMPPS/MAMPS and Turing. 
-  $dbUser = 'lomace'; //use root on AMPPS/MAMPS or your user-name on Turing
-  $dbPassword = 'lomace';
-  //For password, use empty string on AMPPS/MAMPS or your password if you have one. 
-  //Default AMPPS/MAMPS password is mysql
-  
-?>
->>>>>>> 3b8dcddec080e2938ab9ac3abead0ab4ff946a2b

@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 /*
-=======
-/* 
->>>>>>> 3b8dcddec080e2938ab9ac3abead0ab4ff946a2b
 If you want to test this on your own, you will need to include:       (If ran on touring leave out Create Database and swap USE "Project" to USE "your username")
 
 Create DATABASE Project;
@@ -47,12 +43,8 @@ DROP TABLE IF EXISTS owners;
 CREATE TABLE owners
 (
    id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-<<<<<<< HEAD
    firstname varchar(50),
    lastname varchar(50),
-=======
-   Name varchar(50),
->>>>>>> 3b8dcddec080e2938ab9ac3abead0ab4ff946a2b
    email varchar(50),
    password varchar(32)
 );
@@ -69,8 +61,4 @@ CREATE TABLE car_owners
    PRIMARY KEY(CID, OWID),
    FOREIGN KEY (CID) REFERENCES cars(ID),
    FOREIGN KEY (OWID) REFERENCES owners(ID)
-<<<<<<< HEAD
 );
-=======
-);
->>>>>>> 3b8dcddec080e2938ab9ac3abead0ab4ff946a2b
