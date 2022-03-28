@@ -12,6 +12,7 @@ session_start();
 
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
    <script>
     var _data = {};
             var _data = {"2022":{"Chevrolet":"Chevrolet","Dodge":"Dodge","Ford":"Ford","Honda":"Honda","Tesla":"Tesla"},
@@ -39,11 +40,13 @@ session_start();
                   <div class="rvt-lockup__body">
                     <span class="rvt-lockup__title">Red Book Value</span>
                     <span class="rvt-lockup__subtitle">Blue Team Inc.</span>
+                    
                   </div>
+                  
                 </a>
 
               </div>
-              <a href="#0" class="rvt-header-id__log-out">
+              <a href="register.php" class="rvt-header-id__log-out">
                 Log out
                 </a>
             </div>

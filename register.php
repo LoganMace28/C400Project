@@ -3,8 +3,24 @@
 <html>
    <head>
       <meta charset = "utf-8" />
-	  <title>Register</title>
+      <link rel="stylesheet" type="text/css" href="CSS/common.css" />
+      <link rel="stylesheet" href="https://unpkg.com/rivet-core@2.0.0-beta.2/css/rivet.min.css">
+	    <title>Register</title>
   </head>
+  <header class="rvt-header-wrapper">
+  <div class="rvt-header-global">
+    <div class="rvt-container-xl">
+      <div class="rvt-header-global__inner">
+            <div class="rvt-lockup__body">
+              <span class="rvt-lockup__title">Red Book Value</span>
+              <span class="rvt-lockup__subtitle">Blue Team Inc.</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
 
 <body>
     <?php
