@@ -43,7 +43,7 @@ session_start();
                 </a>
 
               </div>
-              <a href="#0" class="rvt-header-id__log-out">
+              <a href="register.php" class="rvt-header-id__log-out">
                 Log out
                 </a>
             </div>
