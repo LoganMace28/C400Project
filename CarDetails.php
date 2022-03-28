@@ -26,7 +26,7 @@ session_start();
           <div class="rvt-container-xl">
             <div class="rvt-header-global__inner">
               <a class="rvt-lockup" href="AddCar.php">
-          
+
                   <div class="rvt-lockup__body">
                     <span class="rvt-lockup__title">Red Book Value</span>
                     <span class="rvt-lockup__subtitle">Blue Team Inc.</span>
@@ -38,11 +38,11 @@ session_start();
                 Log out
                 </a>
             </div>
-            
+
           </div>
-          
+
         </div>
-        
+
       </header>
 
       <div class="rvt-hero">
@@ -53,18 +53,18 @@ session_start();
                     <div class="rvt-hero__teaser">
                         <p>Tell us a bit more about your vehicle for a final quote!</p>
                     </div>
-                
+
                 </div>
             </div>
         </div>
-    </div>   
+    </div>
     <?php
    
-   require_once 'login.php';
-   
+   require_once 'auth.php';
+
    $displayForm = true;
    $inputError = false;
-   
+
      //Connect to MySQL Server: create a new object named $pdo
    try {
      $pdo = new PDO($dsn, $dbUser, $dbPassword);
@@ -94,7 +94,7 @@ if (isset($_POST['enter'])) {
   <input type="Checkbox" id="heatseat" name="check[]" value="Heated Seats">
   <label for="heatseat">Heated Seats</label><br>
   <input type="Checkbox" id="Remo" name="check[]" value="Remote Start">
-  <label for="Remo">Remote Start</label><br>  
+  <label for="Remo">Remote Start</label><br>
   <input type="Checkbox" id="Auto" name="check[]" value="Automatic Headlights">
   <label for="Auto">Automatic HeadLights</label><br>
   <input type="Checkbox" id="Cruse" name="check[]" value="Cruse Control">
@@ -107,7 +107,7 @@ if (isset($_POST['enter'])) {
   <input type="radio" id="low" name="Mileage" value="1">
   <label for="low">0-10k</label><br>
   <input type="radio" id="Mid" name="Mileage" value="2">
-  <label for="Mid">11-40k</label><br>  
+  <label for="Mid">11-40k</label><br>
   <input type="radio" id="High" name="Mileage" value="3">
   <label for="High">41-70k</label><br>
   <input type="radio" id="Vhigh" name="Mileage" value="4">
@@ -120,7 +120,7 @@ if (isset($_POST['enter'])) {
   <input type="radio" id="Fair" name="Condition" value="1">
   <label for="Fair">Fair</label><br>
   <input type="radio" id="Good" name="Condition" value="2">
-  <label for="Good">Good</label><br>  
+  <label for="Good">Good</label><br>
   <input type="radio" id="VeryG" name="Condition" value="3">
   <label for="VeryG">Very Good</label><br>
   <input type="radio" id="Exce" name="Condition" value="4">

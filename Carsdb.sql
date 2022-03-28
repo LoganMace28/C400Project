@@ -1,4 +1,4 @@
-/* 
+/*
 If you want to test this on your own, you will need to include:       (If ran on touring leave out Create Database and swap USE "Project" to USE "your username")
 
 Create DATABASE Project;
@@ -43,7 +43,8 @@ DROP TABLE IF EXISTS owners;
 CREATE TABLE owners
 (
    id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-   Name varchar(50),
+   firstname varchar(50),
+   lastname varchar(50),
    email varchar(50),
    password varchar(32)
 );

@@ -10,7 +10,7 @@
     <?php
     $username = "";
     $password = "";
-    require_once 'auth.php'; 
+    require_once 'auth.php';
 
     //Connect to MySQL Server: create a new object named $pdo
     try {
@@ -24,24 +24,24 @@
     if (isset($_POST['username']) && isset($_POST['password'])) {
         $username = sanitise($pdo, floatval($_GET["username"]));
         $password = sanitise($pdo, floatval($_GET["password"]));
-        
-        if (empty($username) or empty($password)) 
+
+        if (empty($username) or empty($password))
             echo "Missing username or password.";
-        else 
+        else
         $query   = "SELECT * FROM users WHERE username=$username";
         $result  = $pdo->query($query);
-    
-        if (!$result->rowCount()) 
+
+        if (!$result->rowCount())
             die("User not found");
-        
+
         $row = $result->fetch();
         $pwTemp  = $row['password'];
-        $userID  = $row['userID'];
+        $userID  = $row['id'];
 
         if (password_verify(str_replace("'", "", $pw_temp), $pw)) {
             session_start();
             $_SESSION['userID'] = $userID;
-            header('Location: ./home.html');
+            header('Location: ./addcar.php');
         }
     }
     ?>
