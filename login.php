@@ -38,7 +38,7 @@
           $pwTemp  = $row['password'];
           $userID  = $row['id'];
 
-          if (password_verify(str_replace("'", "", $pwTemp), $pw)) {
+          if (password_verify($password, $pwTemp)) {
               session_start();
               $_SESSION['userID'] = $userID;
               header('Location: ./AddCar.php');
