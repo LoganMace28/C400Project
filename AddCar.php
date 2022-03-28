@@ -42,7 +42,7 @@ session_start();
                   </div>
                 </a>
               </div>
-              <a href="login.php"class="rvt-header-id__log-out">Log out</a><?php session_unset(); session_destroy(); ?>
+              <a href="login.php"class="rvt-header-id__log-out">Log out</a>
               <a href="History.php"class="rvt-header-id__history">History</a>
             </div>
             

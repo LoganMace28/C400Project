@@ -24,6 +24,9 @@
 
 <body>
     <?php
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
     $username = "";
     $password = "";
     $firstname = "";
@@ -36,7 +39,7 @@
         $pdo = new PDO($dsn, $dbUser, $dbPassword);
     }
     catch (PDOException $e){
-        throw new PDOException($e->POSTMessage(), (int)$e->POSTCode());
+        throw new PDOException($e->getMessage(), (int)$e->getCode());
         die("Fatal Error - Could not connect to the database" . "</body></html>" );
     }
 
@@ -70,7 +73,7 @@
             $userID  = $row['id'];
             session_start();
             $_SESSION['userID'] = $userID;
-            header('Location: ./AddCar.php');
+            header('Location:AddCar.php');
           }
         }
     }
@@ -100,6 +103,9 @@
             </tr>
             <tr>
                 <td><input name="Register" type="submit" value="Register" /></td>
+            </tr>
+            <tr>
+              <td><a href="login.php">Already have an account?</a></td>
             </tr>
     <?php
     function sanitise($pdo, $str)
