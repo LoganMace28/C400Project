@@ -56,7 +56,7 @@
         }
     }
     ?>
-    <form action="login.php" method="post">
+    <form action="register.php" method="post">
         <h3>Register</h3>
         <table>
             <tr>
