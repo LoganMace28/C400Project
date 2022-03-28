@@ -28,7 +28,7 @@
         if (empty($username) or empty($password))
             echo "Missing username or password.";
         else {
-        $query   = "SELECT * FROM users WHERE username=$username";
+        $query   = "SELECT * FROM owners WHERE email='$username'";
         $result  = $pdo->query($query);
 
         if (!$result->rowCount())
