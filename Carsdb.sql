@@ -13,10 +13,10 @@ CREATE TABLE cars
    Year varchar(20),
    Price int(7)
 );
-Insert into cars (Make, Model, year, Price) VALUES ("Cheverolet", "Equinox","2022","50000");
-Insert into cars (Make, Model, year, Price) VALUES ("Cheverolet", "Equinox","2021","45000");
-Insert into cars (Make, Model, year, Price) VALUES ("Cheverolet", "Cruze","2022","30000");
-Insert into cars (Make, Model, year, Price) VALUES ("Cheverolet", "Cruze","2021","25000");
+Insert into cars (Make, Model, year, Price) VALUES ("Chevrolet", "Equinox","2022","50000");
+Insert into cars (Make, Model, year, Price) VALUES ("Chevrolet", "Equinox","2021","45000");
+Insert into cars (Make, Model, year, Price) VALUES ("Chevrolet", "Cruze","2022","30000");
+Insert into cars (Make, Model, year, Price) VALUES ("Chevrolet", "Cruze","2021","25000");
 
 Insert into cars (Make, Model, year, Price) VALUES ("Dodge", "Drango","2022","55000");
 Insert into cars (Make, Model, year, Price) VALUES ("Dodge", "Drango","2021","45000");
