@@ -57,11 +57,11 @@
         <table>
             <tr>
                 <td>Username:</td>
-                <td><input type="text" name= "username" id="username" size= 10 /></td>
+                <td><input type="text" name= "username" id="username" size= 20 /></td>
             </tr>
             <tr>
                 <td>Password:</td>
-                <td><input type="text" name= "password" id="password" size= 10 /></td>
+                <td><input type="password" name= "password" id="password" size= 20 /></td>
             </tr>
             <tr>
                 <td><input name="Login" type="submit" value="Login" /></td>

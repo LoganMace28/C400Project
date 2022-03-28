@@ -95,11 +95,11 @@
             </tr>
             <tr>
                 <td>Password:</td>
-                <td><input type="text" name= "password" id="password" size= 10 /></td>
+                <td><input type="password" name= "password" id="password" size= 10 /></td>
             </tr>
             <tr>
                 <td>Confirm Password:</td>
-                <td><input type="text" name= "passwordConf" id="passwordConf" size= 10 /></td>
+                <td><input type="password" name= "passwordConf" id="passwordConf" size= 10 /></td>
             </tr>
             <tr>
                 <td><input name="Register" type="submit" value="Register" /></td>
