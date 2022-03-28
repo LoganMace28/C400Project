@@ -25,11 +25,11 @@
     }
 
     if (isset($_POST['username']) && isset($_POST['password'])) {
-        $username = sanitise($pdo, floatval($_POST["username"]));
-        $password = sanitise($pdo, floatval($_POST["password"]));
-        $firstname = sanitise($pdo, floatval($_POST["firstname"]));
-        $lastname = sanitise($pdo, floatval($_POST["lastname"]));
-        $pwdConf = sanitise($pdo, floatval($_POST["passwordConf"]));
+        $username = sanitise($pdo, $_POST["username"]);
+        $password = sanitise($pdo, $_POST["password"]);
+        $firstname = sanitise($pdo, $_POST["firstname"]);
+        $lastname = sanitise($pdo, $_POST["lastname"]);
+        $pwdConf = sanitise($pdo, $_POST["passwordConf"]);
 
         if (empty($_POST['username']) or empty($_POST['password']) or empty($_POST['passwordConf']) or empty($_POST['firstname']) or empty($_POST['lastname']))
             echo "Must fill all fields.";
@@ -41,19 +41,16 @@
           if ($result->rowCount())
             echo ("User already exists");
           else {
-            $query = "INSERT INTO owners (email, password, firstname, lastname) ";
-            $query .= "VALUES ($username, ". password_hash($password, PASSWORD_DEFAULT);
-            $query .= ", $firstname, $lastname)";
+            $pwtemp = password_hash($password, PASSWORD_DEFAULT);
+            $query = "INSERT INTO owners (firstname, lastname, email, password) VALUES ($firstname, $lastname, $username, '$pwtemp')";
             if (!($result  = $pdo->query($query))) {
               die("There was an error </body></html>");
             }
-            die('test</body></html>');
-            $query   = "SELECT * FROM owners WHERE email=$username";
+            $query   = "SELECT id FROM owners WHERE email=$username";
             if (!($result  = $pdo->query($query))) {
               die("There was an error </body></html>");
             }
             $row = $result->fetch();
-            $pwTemp  = $row['password'];
             $userID  = $row['id'];
             session_start();
             $_SESSION['userID'] = $userID;

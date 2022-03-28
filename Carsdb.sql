@@ -46,7 +46,7 @@ CREATE TABLE owners
    firstname varchar(50),
    lastname varchar(50),
    email varchar(50),
-   password varchar(32)
+   password varchar(70)
 );
 
 DROP TABLE IF EXISTS car_owners;

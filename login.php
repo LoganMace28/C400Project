@@ -17,31 +17,35 @@
         $pdo = new PDO($dsn, $dbUser, $dbPassword);
     }
     catch (PDOException $e){
-        throw new PDOException($e->getMessage(), (int)$e->getCode());
+        throw new PDOException($e->POSTMessage(), (int)$e->POSTCode());
         die("Fatal Error - Could not connect to the database" . "</body></html>" );
     }
 
     if (isset($_POST['username']) && isset($_POST['password'])) {
-        $username = sanitise($pdo, floatval($_GET["username"]));
-        $password = sanitise($pdo, floatval($_GET["password"]));
+        $username = sanitise($pdo, $_POST["username"]);
+        $password = sanitise($pdo, $_POST["password"]);
 
-        if (empty($username) or empty($password))
+        if (empty($_POST['username']) or empty($_POST['password']))
             echo "Missing username or password.";
         else {
-        $query   = "SELECT * FROM owners WHERE email='$username'";
+        $query   = "SELECT * FROM owners WHERE email=$username";
         $result  = $pdo->query($query);
 
         if (!$result->rowCount())
-            die("User not found");
+            echo "User not found";
+        else {
+          $row = $result->fetch();
+          $pwTemp  = $row['password'];
+          $userID  = $row['id'];
 
-        $row = $result->fetch();
-        $pwTemp  = $row['password'];
-        $userID  = $row['id'];
-
-        if (password_verify(str_replace("'", "", $pw_temp), $pw)) {
-            session_start();
-            $_SESSION['userID'] = $userID;
-            header('Location: ./AddCar.php');
+          if (password_verify(str_replace("'", "", $pwTemp), $pw)) {
+              session_start();
+              $_SESSION['userID'] = $userID;
+              header('Location: ./AddCar.php');
+          }
+          else {
+            echo "Username or Password incorrect";
+          }
         }
       }
     }
