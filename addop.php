@@ -18,13 +18,15 @@ session_start();
 
 //===========================================================================
  if ($inputError == false) {
-	$query = "SELECT Price FROM cars where Year = :year and Make = :make and Model = :model";
+	$query = "SELECT Price, id FROM cars where Year = :year and Make = :make and Model = :model";
 	$stmt = $pdo->prepare($query);
 	$stmt->bindValue(':year', $year);
 	$stmt->bindValue(':make', $make);
 	$stmt->bindValue(':model', $model);
 	$stmt->execute();
 	$_SESSION["basePrice"] = $stmt->fetchColumn();
+	$stmt->execute();
+	$cid = $stmt->fetchColumn(1);
 
 	$checked_arr = $_POST['check'];
 	$options = count($checked_arr)*50;
@@ -50,53 +52,28 @@ session_start();
 	}else if ($mileage == 5){
 		$degReduction = $_SESSION["basePrice"] * .20;
 	}
-
+	$displayForm = false;
 	$_SESSION["finalValue"] = $conPrice + $options -$degReduction;
-	//echo $conPrice ." " . $options . " " . $degReduction . " mileage value: ". $mileage ;
-	echo "The True value of your vehicle is: " . $_SESSION["finalValue"];
+	$dealer = $_SESSION["finalValue"] *1.15;
+	$cpo = $_SESSION["finalValue"] * 1.1;
 
-	//$trueValue = $_SESSION["basePrice"] * 
+	echo "<p>The private owner value of your vehicle is: " . $_SESSION["finalValue"] . "</p>";
+	echo "<p>The suggested retail price of your vehicle is: " . $dealer. "</p>";
+	echo "<p>The certified preowned price of your vehicle is: " . $cpo. "</p>";
 
-	// foreach ($pdo->query($query) as $row) {
-	// 	print $row['Price'] . "\t";
 
-	// if (!($result = $pdo->query($query))) {
-	// 	print( "<p>Could not execute query!</p>" );
-	// 	die("</body></html>");
-	// } 
-	// else {
 
-	 
-}
-// 	foreach ($author_arr as $author) {
-// 		$aid = $authors_ids[$author];
-// 		$query_books_authors = "INSERT INTO books_authors (BID, AID)";
-// 		$query_books_authors .= "VALUES ('$bookid' , '$aid')";
-// 		if (!($result = $pdo->query($query_books_authors))) {
-// 			print("<p>Could not execute books-authors query!</p>");
-// 			die("</body></html>");
-// 		}
-// 	}
-// 	echo "<h2>Books-Authors table was successfully updated with " .
-// 		count($author_arr) . " rows</h2>";
-// 	//All book ids and titles that are authored by each author whose name was checked in the 
-// 	//form during the insert operation:
-// 	foreach ($author_arr as $author) {
-// 		$query_author_titles = "SELECT books.Title FROM books, authors, books_authors ";
-// 		$query_author_titles .= "WHERE books.ID = books_authors.BID AND authors.ID = books_authors.AID ";
-// 		$query_author_titles .= "AND authors.Name = \"$author\"";
-// 		if (!($result = $pdo->query($query_author_titles))) {
-// 			print("<p>Could not execute select book titles for each author query!</p>");
-// 			die("</body></html>");
-// 		} else {
-// 			echo "<p><strong>All books authord by " . "$author" . ":</strong></p>";
-// 			while ($row = $result->fetch(PDO::FETCH_NUM)) {
-// 				foreach ($row as $value)
-// 					print("$value" . "<br>");
-// 			}
-// 		}
-// 	}
-// 	$displayForm = true;
-// 	echo "<p><a href=\"BooksDBInsertDeleteAllOne.php\">Add some more?</a></p>\n";
-// }
+
+	$query_history = "INSERT INTO car_owners (CID, OWID, BasePrice, PrivatePrice, dealer, cpo) VALUES (:cid,:owid,:baseprice,:privateprice,:dealer,:cpo)";
+	$hist = $pdo->prepare($query_history);
+	$hist->bindValue(':cid', $cid);
+	$hist->bindValue(':owid', $owid);
+	$hist->bindValue(':baseprice', $_SESSION["basePrice"]);
+	$hist->bindValue(':privateprice', $_SESSION["finalValue"]);
+	$hist->bindValue(':dealer', $dealer);
+	$hist->bindValue(':cpo', $cpo);
+	$hist->execute();
+
+
+ }
 ?>
