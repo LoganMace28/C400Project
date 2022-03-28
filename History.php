@@ -66,7 +66,7 @@ table.GeneratedTable thead {
                 </a>
 
               </div>
-              <a href="login.php"class="rvt-header-id__log-out">Log out</a><?php session_unset(); session_destroy(); ?>
+              <a href="login.php"class="rvt-header-id__log-out">Log out</a>
 
             </div>
             
@@ -124,7 +124,7 @@ table.GeneratedTable thead {
          //throw new PDOException($e->getMessage(), (int)$e->getCode());
        }
       $userid = $_SESSION['userID'];
-       $query = "SELECT cars.Year, cars.Make, cars.Model, car_owners.BasePrice, car_owners.PrivatePrice, car_owners.dealer, car_owners.cpo FROM cars, owners, car_owners WHERE car_owners.OWID = \"$userid\" and cars.id = car_owners.CID";
+       $query = "SELECT cars.Year, cars.Make, cars.Model, car_owners.BasePrice, car_owners.PrivatePrice, car_owners.dealer, car_owners.cpo FROM cars, owners, car_owners WHERE car_owners.OWID = owners.id and cars.id = car_owners.CID and owners.id = \"$userid\"";
       //  $stmt = $pdo->prepare($query);
       // //$stmt->bindValue(':owid', $_SESSION['userID']);
       //  $stmt->execute();

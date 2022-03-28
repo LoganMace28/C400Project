@@ -4,6 +4,8 @@ If you want to test this on your own, you will need to include:       (If ran on
 Create DATABASE Project;
 */
 USE Project;
+DROP TABLE IF EXISTS car_owners;
+DROP TABLE IF EXISTS owners;
 DROP TABLE IF EXISTS cars;
 CREATE TABLE cars
 (
@@ -18,8 +20,8 @@ Insert into cars (Make, Model, year, Price) VALUES ("Chevrolet", "Equinox","2021
 Insert into cars (Make, Model, year, Price) VALUES ("Chevrolet", "Cruze","2022","30000");
 Insert into cars (Make, Model, year, Price) VALUES ("Chevrolet", "Cruze","2021","25000");
 
-Insert into cars (Make, Model, year, Price) VALUES ("Dodge", "Drango","2022","55000");
-Insert into cars (Make, Model, year, Price) VALUES ("Dodge", "Drango","2021","45000");
+Insert into cars (Make, Model, year, Price) VALUES ("Dodge", "Durango","2022","55000");
+Insert into cars (Make, Model, year, Price) VALUES ("Dodge", "Durango","2021","45000");
 Insert into cars (Make, Model, year, Price) VALUES ("Dodge", "Dart","2022","28000");
 Insert into cars (Make, Model, year, Price) VALUES ("Dodge", "Dart","2021","22000");
 
@@ -59,6 +61,8 @@ CREATE TABLE car_owners
    dealer int(7),
    cpo int(7),
    PRIMARY KEY(CID, OWID),
-   FOREIGN KEY (CID) REFERENCES cars(ID),
-   FOREIGN KEY (OWID) REFERENCES owners(ID)
+   FOREIGN KEY (CID) REFERENCES cars(id),
+   FOREIGN KEY (OWID) REFERENCES owners(id)
 );
+INSERT INTO owners (firstname, lastname,  email, password) values ("John", "Doe", "jdoe@jdoe.com", "test");
+INSERT INTO car_owners (CID,OWID,BasePrice,PrivatePrice,dealer,cpo) VALUES (1,1,25,28,26,27);

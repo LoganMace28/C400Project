@@ -3,6 +3,9 @@ session_start();
 		$year = $_SESSION["year"];
 		$make = $_SESSION["make"];
 		$model = $_SESSION["model"];
+		echo $year;
+		echo $make;
+		echo $model;
 		if(isset($_POST['Mileage']))
 			$mileage = $_SESSION["mileage"];
 		else

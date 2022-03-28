@@ -8,6 +8,8 @@
 
 <body>
     <?php
+    session_unset(); 
+    session_destroy(); 
     $username = "";
     $password = "";
     require_once 'auth.php';
@@ -17,7 +19,7 @@
         $pdo = new PDO($dsn, $dbUser, $dbPassword);
     }
     catch (PDOException $e){
-        throw new PDOException($e->POSTMessage(), (int)$e->POSTCode());
+        throw new PDOException($e->getMessage(), (int)$e->getCode());
         die("Fatal Error - Could not connect to the database" . "</body></html>" );
     }
 
@@ -41,7 +43,7 @@
           if (password_verify($password, $pwTemp)) {
               session_start();
               $_SESSION['userID'] = $userID;
-              header('Location: ./AddCar.php');
+              header('Location:AddCar.php');
           }
           else {
             echo "Username or Password incorrect";
@@ -63,6 +65,9 @@
             </tr>
             <tr>
                 <td><input name="Login" type="submit" value="Login" /></td>
+            </tr>
+            <tr>
+                <td><a href="register.php">Create an account</a></td>
             </tr>
     <?php
     function sanitise($pdo, $str)
