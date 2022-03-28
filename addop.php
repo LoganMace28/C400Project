@@ -67,7 +67,7 @@ session_start();
 	$query_history = "INSERT INTO car_owners (CID, OWID, BasePrice, PrivatePrice, dealer, cpo) VALUES (:cid,:owid,:baseprice,:privateprice,:dealer,:cpo)";
 	$hist = $pdo->prepare($query_history);
 	$hist->bindValue(':cid', $cid);
-	$hist->bindValue(':owid', $owid);
+	$hist->bindValue(':owid', $_SESSION['userID']);
 	$hist->bindValue(':baseprice', $_SESSION["basePrice"]);
 	$hist->bindValue(':privateprice', $_SESSION["finalValue"]);
 	$hist->bindValue(':dealer', $dealer);
