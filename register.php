@@ -51,7 +51,7 @@
             }
             session_start();
             $_SESSION['userID'] = $userID;
-            header('Location: ./addcar.php');
+            header('Location: ./AddCar.php');
           }
         }
     }

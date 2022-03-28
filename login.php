@@ -27,7 +27,7 @@
 
         if (empty($username) or empty($password))
             echo "Missing username or password.";
-        else
+        else {
         $query   = "SELECT * FROM users WHERE username=$username";
         $result  = $pdo->query($query);
 
@@ -41,8 +41,9 @@
         if (password_verify(str_replace("'", "", $pw_temp), $pw)) {
             session_start();
             $_SESSION['userID'] = $userID;
-            header('Location: ./addcar.php');
+            header('Location: ./AddCar.php');
         }
+      }
     }
     ?>
     <form action="login.php" method="post">
