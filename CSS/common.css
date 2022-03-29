@@ -3,7 +3,7 @@ rvt-lockup_body {
 }
 
 h1 {
-    color: rgba(231, 9, 9, 0.993);
+    color: rgba(211, 8, 8, 0.918);
     font-weight: bold;
     font-size: 20px;
 }
@@ -12,16 +12,6 @@ h1 {
     font-size: 20px;
     font-weight: bold;
     padding-bottom: 30px;
-}
-
-.rvt-header-id__log-out {
-    text-align:right;
-    /* padding-right:30px; */
-    float: right;
-    padding-bottom: 55px;
-    padding-top: 30px;
-    
-    
 }
 
 .dropdown {

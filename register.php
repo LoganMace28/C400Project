@@ -7,22 +7,63 @@
       <link rel="stylesheet" href="https://unpkg.com/rivet-core@2.0.0-beta.2/css/rivet.min.css">
 	    <title>Register</title>
   </head>
-  <header class="rvt-header-wrapper">
-  <div class="rvt-header-global">
-    <div class="rvt-container-xl">
-      <div class="rvt-header-global__inner">
-            <div class="rvt-lockup__body">
-              <span class="rvt-lockup__title">Red Book Value</span>
-              <span class="rvt-lockup__subtitle">Blue Team Inc.</span>
+    <!-- Header and Page Banner -->
+    <header class="rvt-header-wrapper">
+    
+    <div class="rvt-header-global">
+        <div class="rvt-container-xl">
+            <div class="rvt-header-global__inner">
+                <div class="rvt-header-global__logo-slot">
+                    <a class="rvt-lockup" href="AddCar.php">
+
+                    <!--Application Title -->
+                        <div class="rvt-lockup__body">
+                            <span class="rvt-lockup__title">Red Book Value</span>
+                            <span class="rvt-lockup__subtitle">Blue Team Inc.</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="rvt-header-global__controls" data-rvt-disclosure="menu">
+
+                    <!--Navigation-->
+                    <nav aria-label="Main" class="rvt-header-menu" data-rvt-disclosure-target="menu" hidden>
+                        <ul class="rvt-header-menu__list">
+                        	<li class="rvt-header-menu__item">
+                                <a class="rvt-header-menu__link" href="AddCar.php">Home</a>
+                            </li>
+                            <li class="rvt-header-menu__item">
+                                <a class="rvt-header-menu__link" href="#0">History</a>
+                            </li>
+                            <li class="rvt-header-menu__item">
+                                <a class="rvt-header-menu__link" href="register.php">Register New User</a>
+                            </li>
+                           <li class="rvt-header-menu__item">
+                                <a class="rvt-header-menu__link" href="login.php">Log out</a>
+                            </li>
+                           
+                        </ul>
+                    </nav>
+                </div>
             </div>
-          </a>
         </div>
-      </div>
     </div>
-  </div>
 </header>
 
 <body>
+
+<div class="rvt-border-all rvt-border-radius rvt-p-all-xl">
+<main id="main-content" role="main"></main>
+    <div class="rvt-box">
+       
+        <h1>New User Registration</h1>
+          
+        <div class="rvt-box__body">
+            <p class="text rvt-m-bottom-xl" id="text">Welcome! Please complete the form to register as a user.</p>
+           
+                    
+                    <div class="rvt-container--center" style="max-width: 80%">
+                        <div class="rvt-grid">
+                        
     <?php
     $username = "";
     $password = "";
@@ -111,5 +152,17 @@
       return $pdo->quote($str);
     }
     ?>
+    
+    
+                        </div>
+                       
+                    </div>
+            
+           
+        </div>
+    </div>
+</div>
+
+<script src="https://assets.uits.iu.edu/javascript/rivet/1.7.2/rivet.min.js"></script>
 </body>
 </html>

@@ -30,35 +30,52 @@ session_start();
 
 
    <body>
-    <!-- Header and Page Banner - Jean -->
+    <!-- Header and Page Banner -->
     <header class="rvt-header-wrapper">
-        <div class="rvt-header-global">
-          <div class="rvt-container-xl">
+    
+    <div class="rvt-header-global">
+        <div class="rvt-container-xl">
             <div class="rvt-header-global__inner">
-              <a class="rvt-lockup" href="AddCar.php">
-          
-                  <div class="rvt-lockup__body">
-                    <span class="rvt-lockup__title">Red Book Value</span>
-                    <span class="rvt-lockup__subtitle">Blue Team Inc.</span>
-                    
-                  </div>
-                  
-                </a>
+                <div class="rvt-header-global__logo-slot">
+                    <a class="rvt-lockup" href="AddCar.php">
 
-              </div>
-              <a href="register.php" class="rvt-header-id__log-out">
-                Log out
-                </a>
+                    <!--Application Title -->
+                        <div class="rvt-lockup__body">
+                            <span class="rvt-lockup__title">Red Book Value</span>
+                            <span class="rvt-lockup__subtitle">Blue Team Inc.</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="rvt-header-global__controls" data-rvt-disclosure="menu">
+
+                    <!--Navigation-->
+                    <nav aria-label="Main" class="rvt-header-menu" data-rvt-disclosure-target="menu" hidden>
+                        <ul class="rvt-header-menu__list">
+                        	<li class="rvt-header-menu__item">
+                                <a class="rvt-header-menu__link" href="AddCar.php">Home</a>
+                            </li>
+                            <li class="rvt-header-menu__item">
+                                <a class="rvt-header-menu__link" href="#0">History</a>
+                            </li>
+                            <li class="rvt-header-menu__item">
+                                <a class="rvt-header-menu__link" href="register.php">Register New User</a>
+                            </li>
+                           <li class="rvt-header-menu__item">
+                                <a class="rvt-header-menu__link" href="login.php">Log out</a>
+                            </li>
+                           
+                        </ul>
+                    </nav>
+                </div>
             </div>
-            
-          </div>
-          
         </div>
-        
-      </header>
+    </div>
+</header>
 
+<div class="rvt-border-all rvt-border-radius rvt-p-all-xl">
+<div class="rvt-box">
       <div class="rvt-hero">
-        <div class="rvt-container-lg">
+        <div class="rvt-container-xl">
             <div class="rvt-hero__inner">
                 <div class="rvt-hero__body [ rvt-flow ]">
                     <h1 class="rvt-hero__title">Welcome to Red Book Value!</h1>
@@ -134,6 +151,8 @@ session_start();
 
     });
   });
-</script>
 
+</script>
+</div>
+</div>
 </html>
