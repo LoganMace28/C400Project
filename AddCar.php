@@ -55,7 +55,7 @@ session_start();
                                 <a class="rvt-header-menu__link" href="AddCar.php">Home</a>
                             </li>
                             <li class="rvt-header-menu__item">
-                                <a class="rvt-header-menu__link" href="#0">History</a>
+                                <a class="rvt-header-menu__link" href="History.php">History</a>
                             </li>
                             <li class="rvt-header-menu__item">
                                 <a class="rvt-header-menu__link" href="register.php">Register New User</a>
@@ -72,8 +72,8 @@ session_start();
     </div>
 </header>
 
-<div class="rvt-border-all rvt-border-radius rvt-p-all-xl">
-<div class="rvt-box">
+<div class="rvt-border-all rvt-border-radius rvt-p-all-xl rvt-bg-blue-000">
+<div class="rvt-box rvt-color-orange-600">
       <div class="rvt-hero">
         <div class="rvt-container-xl">
             <div class="rvt-hero__inner">

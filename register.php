@@ -32,7 +32,7 @@
                                 <a class="rvt-header-menu__link" href="AddCar.php">Home</a>
                             </li>
                             <li class="rvt-header-menu__item">
-                                <a class="rvt-header-menu__link" href="#0">History</a>
+                                <a class="rvt-header-menu__link" href="History.php">History</a>
                             </li>
                             <li class="rvt-header-menu__item">
                                 <a class="rvt-header-menu__link" href="register.php">Register New User</a>
@@ -54,6 +54,7 @@
 <div class="rvt-border-all rvt-border-radius rvt-p-all-xl">
 <main id="main-content" role="main"></main>
     <div class="rvt-box">
+    <div class="rvt-box__body">
        
         <h1>New User Registration</h1>
           
@@ -124,23 +125,23 @@
         <table>
             <tr>
                 <td>First Name:</td>
-                <td><input type="text" name= "firstname" id="firstname" size= 10 /></td>
+                <td><input type="text" class="resizedTextbox" name= "firstname" id="firstname" size= 10 /></td>
             </tr>
             <tr>
                 <td>Last Name:</td>
-                <td><input type="text" name= "lastname" id="lastname" size= 10 /></td>
+                <td><input type="text" class="resizedTextbox" name= "lastname" id="lastname" size= 10 /></td>
             </tr>
             <tr>
                 <td>Username:</td>
-                <td><input type="text" name= "username" id="username" size= 10 /></td>
+                <td><input type="text" class="resizedTextbox" name= "username" id="username" size= 10 /></td>
             </tr>
             <tr>
                 <td>Password:</td>
-                <td><input type="text" name= "password" id="password" size= 10 /></td>
+                <td><input type="text" class="resizedTextbox" name= "password" id="password" size= 10 /></td>
             </tr>
             <tr>
                 <td>Confirm Password:</td>
-                <td><input type="text" name= "passwordConf" id="passwordConf" size= 10 /></td>
+                <td><input type="text" class="resizedTextbox" name= "passwordConf" id="passwordConf" size= 10 /></td>
             </tr>
             <tr>
                 <td><input name="Register" type="submit" value="Register" /></td>
@@ -161,6 +162,7 @@
            
         </div>
     </div>
+</div>
 </div>
 
 <script src="https://assets.uits.iu.edu/javascript/rivet/1.7.2/rivet.min.js"></script>

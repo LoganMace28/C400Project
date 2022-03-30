@@ -57,9 +57,10 @@ session_start();
 	$dealer = $_SESSION["finalValue"] *1.15;
 	$cpo = $_SESSION["finalValue"] * 1.1;
 
-	echo "<p>The private owner value of your vehicle is: " . $_SESSION["finalValue"] . "</p>";
-	echo "<p>The suggested retail price of your vehicle is: " . $dealer. "</p>";
-	echo "<p>The certified preowned price of your vehicle is: " . $cpo. "</p>";
+
+	echo "<p style='color:#00385f; text-align: center; font-size: 20px; font-weight: bold'>The private owner value of your vehicle is: <br></br>" . $_SESSION["finalValue"] . "</p>";
+	echo "<p style='color:#00385f; text-align: center; font-size: 20px; font-weight: bold'>The suggested retail price of your vehicle is: <br></br>" . $dealer. "</p>";
+	echo "<p style='color:#00385f; text-align: center; font-size: 20px; font-weight: bold'>The certified preowned price of your vehicle is: <br></br>" . $cpo. "</p>";
 
 
 

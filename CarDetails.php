@@ -45,7 +45,7 @@ session_start();
                                 <a class="rvt-header-menu__link" href="AddCar.php">Home</a>
                             </li>
                             <li class="rvt-header-menu__item">
-                                <a class="rvt-header-menu__link" href="#0">History</a>
+                                <a class="rvt-header-menu__link" href="History.php">History</a>
                             </li>
                             <li class="rvt-header-menu__item">
                                 <a class="rvt-header-menu__link" href="register.php">Register New User</a>
@@ -61,7 +61,8 @@ session_start();
         </div>
     </div>
 </header>
-<div class="rvt-hero">
+<div class="rvt-hero rvt-bg-blue-000">
+<div class="rvt-box rvt-color-orange-600">
 <div class="rvt-container-lg">
       <div class="rvt-billboard rvt-billboard--center">
         <div class="rvt-billboard__body">
@@ -74,6 +75,7 @@ session_start();
       </div>
     </div>
   </div>
+</div>
       
     <?php
 
@@ -105,7 +107,10 @@ if (isset($_POST['enter'])) {
 	if ($displayForm) {
 	?>
 
+
     <form method = "post" action = "CarDetails.php">
+    
+    <div class="rvt-container-lg rvt-container--center">
        <p>Options</p>
   <div class = "Checkbox">
   <input type="Checkbox" id="heatseat" name="check[]" value="Heated Seats">
@@ -144,6 +149,8 @@ if (isset($_POST['enter'])) {
   <label for="Exce">Excellent</label><br>
   <input type="submit" name = "enter" value="Submit">
   </div>
+  </div>
+  
     </form>
     <?php
   }

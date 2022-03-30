@@ -35,7 +35,7 @@
                                 <a class="rvt-header-menu__link" href="AddCar.php">Home</a>
                             </li>
                             <li class="rvt-header-menu__item">
-                                <a class="rvt-header-menu__link" href="#0">History</a>
+                                <a class="rvt-header-menu__link" href="History.php">History</a>
                             </li>
                             <li class="rvt-header-menu__item">
                                 <a class="rvt-header-menu__link" href="register.php">Register New User</a>
