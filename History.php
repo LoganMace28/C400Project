@@ -31,7 +31,7 @@ table.GeneratedTable thead {
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="CSS/common.css" />
     <link rel="stylesheet" href="https://unpkg.com/rivet-core@2.0.0-beta.2/css/rivet.min.css">
-    <title>Home</title>
+    <title>History</title>
 
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -52,29 +52,46 @@ table.GeneratedTable thead {
 
 
    <body>
-    <!-- Header and Page Banner - Jean -->
-    <header class="rvt-header-wrapper">
-        <div class="rvt-header-global">
-          <div class="rvt-container-xl">
+    <!-- Header and Page Banner -->
+<header class="rvt-header-wrapper">
+    <div class="rvt-header-global">
+        <div class="rvt-container-xl">
             <div class="rvt-header-global__inner">
-              <a class="rvt-lockup" href="AddCar.php">
-          
-                  <div class="rvt-lockup__body">
-                    <span class="rvt-lockup__title">Red Book Value</span>
-                    <span class="rvt-lockup__subtitle">Blue Team Inc.</span>
-                  </div>
-                </a>
+                <div class="rvt-header-global__logo-slot">
+                    <a class="rvt-lockup" href="AddCar.php">
 
-              </div>
-              <a href="login.php"class="rvt-header-id__log-out">Log out</a>
+                    <!--Application Title -->
+                        <div class="rvt-lockup__body">
+                            <span class="rvt-lockup__title">Red Book Value</span>
+                            <span class="rvt-lockup__subtitle">Blue Team Inc.</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="rvt-header-global__controls" data-rvt-disclosure="menu">
 
+                    <!--Navigation-->
+                    <nav aria-label="Main" class="rvt-header-menu" data-rvt-disclosure-target="menu" hidden>
+                        <ul class="rvt-header-menu__list">
+                        	<li class="rvt-header-menu__item">
+                                <a class="rvt-header-menu__link" href="AddCar.php">Home</a>
+                            </li>
+                            <li class="rvt-header-menu__item">
+                                <a class="rvt-header-menu__link" href="History.php">History</a>
+                            </li>
+                            <li class="rvt-header-menu__item">
+                                <a class="rvt-header-menu__link" href="register.php">Register New User</a>
+                            </li>
+                           <li class="rvt-header-menu__item">
+                                <a class="rvt-header-menu__link" href="login.php">Log out</a>
+                            </li>
+                           
+                        </ul>
+                    </nav>
+                </div>
             </div>
-            
-          </div>
-          
         </div>
-        
-      </header>
+    </div>
+</header>
 
       <div class="rvt-hero">
         <div class="rvt-container-lg">
