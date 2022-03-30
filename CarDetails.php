@@ -20,43 +20,63 @@ session_start();
 
 
    <body>
-    <!-- Header and Page Banner - Jean -->
+    <!-- Header and Page Banner -->
     <header class="rvt-header-wrapper">
-        <div class="rvt-header-global">
-          <div class="rvt-container-xl">
+    
+    <div class="rvt-header-global">
+        <div class="rvt-container-xl">
             <div class="rvt-header-global__inner">
-              <a class="rvt-lockup" href="AddCar.php">
-          
-                  <div class="rvt-lockup__body">
-                    <span class="rvt-lockup__title">Red Book Value</span>
-                    <span class="rvt-lockup__subtitle">Blue Team Inc.</span>
-                  </div>
-                </a>
+                <div class="rvt-header-global__logo-slot">
+                    <a class="rvt-lockup" href="AddCar.php">
 
-              </div>
-              <a href="login.php"class="rvt-header-id__log-out">Log out</a>
-              <a href="History.php"class="rvt-header-id__history">History</a>
-            </div>
-            
-          </div>
-          
-        </div>
-        
-      </header>
+                    <!--Application Title -->
+                        <div class="rvt-lockup__body">
+                            <span class="rvt-lockup__title">Red Book Value</span>
+                            <span class="rvt-lockup__subtitle">Blue Team Inc.</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="rvt-header-global__controls" data-rvt-disclosure="menu">
 
-      <div class="rvt-hero">
-        <div class="rvt-container-lg">
-            <div class="rvt-hero__inner">
-                <div class="rvt-hero__body [ rvt-flow ]">
-                    <h1 class="rvt-hero__title">Welcome to Red Book Value!</h1>
-                    <div class="rvt-hero__teaser">
-                        <p>Tell us a bit more about your vehicle for a final quote!</p>
-                    </div>
-                
+                    <!--Navigation-->
+                    <nav aria-label="Main" class="rvt-header-menu" data-rvt-disclosure-target="menu" hidden>
+                        <ul class="rvt-header-menu__list">
+                        	<li class="rvt-header-menu__item">
+                                <a class="rvt-header-menu__link" href="AddCar.php">Home</a>
+                            </li>
+                            <li class="rvt-header-menu__item">
+                                <a class="rvt-header-menu__link" href="History.php">History</a>
+                            </li>
+                            <li class="rvt-header-menu__item">
+                                <a class="rvt-header-menu__link" href="register.php">Register New User</a>
+                            </li>
+                           <li class="rvt-header-menu__item">
+                                <a class="rvt-header-menu__link" href="login.php">Log out</a>
+                            </li>
+                           
+                        </ul>
+                    </nav>
                 </div>
             </div>
         </div>
-    </div>   
+    </div>
+</header>
+<div class="rvt-hero rvt-bg-blue-000">
+<div class="rvt-box rvt-color-orange-600">
+<div class="rvt-container-lg">
+      <div class="rvt-billboard rvt-billboard--center">
+        <div class="rvt-billboard__body">
+          <h1 class="rvt-hero__title">Welcome to Red Book Value!</h1>
+          <div class="rvt-billboard__content [ rvt-flow ]">
+            <p>Tell us a bit more about your vehicle for a final quote!</p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
     <?php
    
    require_once 'auth.php';
@@ -88,6 +108,7 @@ if (isset($_POST['enter'])) {
 	?>
 
     <form method = "post" action = "CarDetails.php">
+    <div class="rvt-container-lg rvt-container--center">
        <p>Options</p>
   <div class = "Checkbox">
   <input type="Checkbox" id="heatseat" name="check[]" value="Heated Seats">
@@ -126,6 +147,8 @@ if (isset($_POST['enter'])) {
   <label for="Exce">Excellent</label><br>
   <input type="submit" name = "enter" value="Submit">
   </div>
+  </div>
+  
     </form>
     <?php
   }

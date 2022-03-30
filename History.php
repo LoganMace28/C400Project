@@ -8,12 +8,12 @@ session_start();
    <style>
 table.GeneratedTable {
   width: 100%;
-  background-color: #ffffff;
+  background-color: #565656;
   border-collapse: collapse;
   border-width: 2px;
   border-color: #000000;
   border-style: solid;
-  color: #000000;
+  color: #ffffff;
 }
 
 table.GeneratedTable td, table.GeneratedTable th {
@@ -24,7 +24,7 @@ table.GeneratedTable td, table.GeneratedTable th {
 }
 
 table.GeneratedTable thead {
-  background-color: #e32400;
+  background-color: #b11c00;
 }
 </style>
 
@@ -111,7 +111,6 @@ table.GeneratedTable thead {
     </div>
     <body>
 
-<!-- HTML Code: Place this code in the document's body (between the 'body' tags) where the table should appear -->
 <table class="GeneratedTable">
   <thead>
     <tr>
@@ -160,7 +159,5 @@ table.GeneratedTable thead {
   </tbody>
 </table>
 </body>
-
-
 
 

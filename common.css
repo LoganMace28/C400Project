@@ -1,0 +1,58 @@
+.rvt-lockup {
+    color: #b11c00;
+}
+
+h1 {
+    color: #b11c00;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.rvt-hero__title {
+    color: #b11c00;
+}
+
+p {
+    color: #b11c00;
+}
+
+.select-title {
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 30px;
+}
+
+.dropdown {
+    width:150px;
+    align-items:center;
+    text-align:center;
+}
+
+.radio {
+    align-items:center;
+    padding-bottom: 70px;
+    text-align:center;
+    font-size: 20px;
+}
+.checkbox {
+    align-items:center;
+    padding-bottom: 70px;
+    text-align:center;
+    font-size: 20px;
+}
+.rvt-container-lg {
+    color: #b11c00;
+    align-items:center;
+    padding-bottom: 70px;
+    text-align:center;
+    font-size: 20px;
+}
+
+.rvt-border-all {
+    align-items:center;
+}
+
+.resizedTextbox {
+    width: 80%;
+    border-color:#c6ecf6;
+}

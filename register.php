@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
    <head>
       <meta charset = "utf-8" />
@@ -7,22 +6,44 @@
       <link rel="stylesheet" href="https://unpkg.com/rivet-core@2.0.0-beta.2/css/rivet.min.css">
 	    <title>Register</title>
   </head>
-  <header class="rvt-header-wrapper">
-  <div class="rvt-header-global">
-    <div class="rvt-container-xl">
-      <div class="rvt-header-global__inner">
-            <div class="rvt-lockup__body">
-              <span class="rvt-lockup__title">Red Book Value</span>
-              <span class="rvt-lockup__subtitle">Blue Team Inc.</span>
+    <!-- Header and Page Banner -->
+    <header class="rvt-header-wrapper">
+    
+    <div class="rvt-header-global">
+        <div class="rvt-container-xl">
+            <div class="rvt-header-global__inner">
+                <div class="rvt-header-global__logo-slot">
+                    <a class="rvt-lockup" href="AddCar.php">
+
+                    <!--Application Title -->
+                        <div class="rvt-lockup__body">
+                            <span class="rvt-lockup__title">Red Book Value</span>
+                            <span class="rvt-lockup__subtitle">Blue Team Inc.</span>
+                        </div>
+                    </a>
+                </div>
+
             </div>
-          </a>
         </div>
-      </div>
     </div>
-  </div>
 </header>
 
 <body>
+
+<div class="rvt-border-all rvt-border-radius rvt-p-all-xl">
+<main id="main-content" role="main"></main>
+    <div class="rvt-box">
+    <div class="rvt-box__body">
+       
+        <h1>New User Registration</h1>
+          
+        <div class="rvt-box__body">
+            <p class="text rvt-m-bottom-xl" id="text">Welcome! Please complete the form to register as a user.</p>
+           
+                    
+                    <div class="rvt-container--center" style="max-width: 80%">
+                        <div class="rvt-grid">
+                   
     <?php
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
@@ -83,23 +104,23 @@
         <table>
             <tr>
                 <td>First Name:</td>
-                <td><input type="text" name= "firstname" id="firstname" size= 10 /></td>
+                <td><input type="text" name= "firstname" id="firstname" size= 20 /></td>
             </tr>
             <tr>
                 <td>Last Name:</td>
-                <td><input type="text" name= "lastname" id="lastname" size= 10 /></td>
+                <td><input type="text" name= "lastname" id="lastname" size= 20 /></td>
             </tr>
             <tr>
                 <td>Username:</td>
-                <td><input type="text" name= "username" id="username" size= 10 /></td>
+                <td><input type="text" name= "username" id="username" size= 20 /></td>
             </tr>
             <tr>
                 <td>Password:</td>
-                <td><input type="password" name= "password" id="password" size= 10 /></td>
+                <td><input type="password" name= "password" id="password" size= 20 /></td>
             </tr>
             <tr>
                 <td>Confirm Password:</td>
-                <td><input type="password" name= "passwordConf" id="passwordConf" size= 10 /></td>
+                <td><input type="password" name= "passwordConf" id="passwordConf" size= 20 /></td>
             </tr>
             <tr>
                 <td><input name="Register" type="submit" value="Register" /></td>
@@ -114,5 +135,18 @@
       return $pdo->quote($str);
     }
     ?>
-</body>
-</html>
+    
+    
+    </div>
+                       
+                       </div>
+               
+              
+           </div>
+       </div>
+   </div>
+   </div>
+   
+   <script src="https://assets.uits.iu.edu/javascript/rivet/1.7.2/rivet.min.js"></script>
+   </body>
+   </html>
